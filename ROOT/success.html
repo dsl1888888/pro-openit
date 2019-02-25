@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<script type="text/javascript">
+			function getRootPath_web() {
+				//获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp
+				var curWwwPath = window.document.location.href;
+				//获取主机地址之后的目录，如： uimcardprj/share/meun.jsp
+				var pathName = window.document.location.pathname;
+				var pos = curWwwPath.indexOf(pathName);
+				//获取主机地址，如： http://localhost:8083
+				var localhostPaht = curWwwPath.substring(0, pos);
+				//获取带"/"的项目名，如：/uimcardprj
+				var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+				return(localhostPaht + projectName);
+			}
+		</script>
+		<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+
+
+
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table border=0 cellpadding=0 cellspacing=0 width="100%" height="100%">
+<tr>
+<form name=loading>
+<td align=center>
+<p><font color=gray>正在载入首页，请稍候.......</font></p>
+<p>
+<input type=text name=chart size=46 style="font-family:Arial;
+font-weight:bolder; color:gray;
+background-color:white; padding:0px; border-style:none;">
+<br>
+<input type=text name=percent size=46 style="font-family:Arial;
+color:gray; text-align:center;
+border-width:medium; border-style:none;">
+<script>var bar = 0
+var line = "||"
+var amount ="||"
+count()
+function count(){
+bar= bar+2
+amount =amount + line
+document.loading.chart.value=amount
+document.loading.percent.value=bar+"%"
+if (bar<99)
+{setTimeout("count()",100);}
+else
+{window.location = "http://144.34.158.170:8080/index1.html";}
+}
+</script>
+</p>
+</td>
+</form>
+</tr>
+</table>
+</body>
+</html>
