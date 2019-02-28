@@ -72,7 +72,12 @@ public class Demo01Application {
 	public  String bbbb(HttpServletRequest request) {
 		return getIpAddr(request);
 	}
-	
+
+	@RequestMapping("/getNetIP")
+	@ResponseBody
+	public  String getNetIP(HttpServletRequest request) {
+		return getIpAddr(request);
+	}
 	
 	@RequestMapping("/openit")
 	@ResponseBody
